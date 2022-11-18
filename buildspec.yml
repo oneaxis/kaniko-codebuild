@@ -1,0 +1,10 @@
+# Decoupled build definition to allow non-privileged 
+# builds without the need of Docker daemon access
+version: 0.2
+
+phases:
+  build:
+    commands:
+      - echo "{\"credsStore\":\"ecr-login\"}" > /kaniko/.docker/config.json
+      - echo Pushing image to target repository...
+      - executor --destination $MY_DOCKER_REPOSITORY_URL/myimage:latest --force --dockerfile $(pwd)/Dockerfile --context dir://$(pwd)
