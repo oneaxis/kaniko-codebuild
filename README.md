@@ -33,11 +33,11 @@ DockerBuildProject:
 
 Instead of setting the BuildSpec via Source, you can also use the CodeBuild buildspec editor ofc.
 
-For more details check out the provided [./buildspec.yml](./buildspec.yml). 
+For more details check out the provided [buildspec.yml](./buildspec.yml). 
 
 # Customize
 You are not limited to use the AWS CLI official base image to form the foundation of this Kaniko helper. You are free to use whatever works for you.
-For that purpose, simply adjust the [./Dockerfile](./Dockerfile) to your needs.
+For that purpose, simply adjust the [Dockerfile](./Dockerfile) to your needs.
 
 You may encounter issues with a symlink issue. To fix this problem add the following to your Dockerfile:
 
